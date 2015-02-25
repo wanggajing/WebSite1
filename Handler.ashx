@@ -6,26 +6,23 @@ using System.Web;
 public class Handler : IHttpHandler {
     
     public void ProcessRequest (HttpContext context) {
-        string name = context.Request["text1"];
+        string value = context.Request["text1"];
         string isPostBack = context.Request["isPostBack"];
         context.Response.ContentType = "text/html";
-        string msg = "";
         
         if (isPostBack=="true")
         {
-            context.Response.Write("enter through submission");
-            msg=name+" Welcome";
+            int temp = Convert.ToInt32(value);
+            temp++;
+            value = temp.ToString();
         }
         else
         {
-            context.Response.Write("enter directly");
-            name="";
-            msg="";
+            value = "0";
         }
         string filePath = context.Server.MapPath("HtmlPage.html");
         string content = System.IO.File.ReadAllText(filePath);
-        content=content.Replace("@value",name);
-        content=content.Replace("@msg",msg);
+        content=content.Replace("@value",value);
         context.Response.Write(content);
     }
  
