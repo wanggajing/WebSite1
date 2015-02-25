@@ -6,7 +6,9 @@
 <body>
     <form action="Handler.ashx" method="post">
         <input type="hidden" name="isPostBack" value="true"/>
-        Value:<input type="text" name="text1" value="@value"/><input type="submit" value="Increse" />
+        <input type="hidden" name="value" value="@value" />
+        <div>@value</div>
+        <input type="submit" value="Increse" />
     </form>
 </body>
 </html>

@@ -6,7 +6,7 @@ using System.Web;
 public class Handler : IHttpHandler {
     
     public void ProcessRequest (HttpContext context) {
-        string value = context.Request["text1"];
+        string value = context.Request["value"];
         string isPostBack = context.Request["isPostBack"];
         context.Response.ContentType = "text/html";
         
