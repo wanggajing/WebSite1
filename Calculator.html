@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="CalcHandler.ashx">
+        <input type="hidden" name="isPostBack" value="true" />
+        <input type="text" name="value1" value="@value1" />+<input type="text" name="value2" value="@value2" /><input type="submit" value="=" />
+        <input type="text" readonly="readonly" value="@result"/>
+    </form>
+</body>
+</html>
