@@ -12,6 +12,7 @@ public partial class _Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             Label1.Text = "0";
+            Label2.Text = "0";
         }
     }
     protected void Button1_Click(object sender, EventArgs e)
@@ -26,5 +27,11 @@ public partial class _Default : System.Web.UI.Page
         temp++;
         TextBox1.Text = temp.ToString();
         TextBox1.Width = new Unit(TextBox1.Width.Value + 10);
+    }
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        Response.Write("Value of Label2 is:" + Label2.Text);
+        Label2.Text = "100";
+        Response.Write("Value of Lable2 after assignment is:" + Label2.Text);
     }
 }
