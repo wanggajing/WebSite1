@@ -12,6 +12,8 @@ public partial class _Default : System.Web.UI.Page
     //然后这个对象就被GC回收
     //所以下次再访问时,又会创建一个新对象，所以field的值又是0；
     private int i = 0;
+    //解决方法，设置为全局变量
+    static private int j = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -41,7 +43,9 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void Button4_Click(object sender, EventArgs e)
     {
-        i++;
-        Label3.Text = i.ToString();
+        //i++;
+        //Label3.Text = i.ToString();
+        j++;
+        Label3.Text = j.ToString();
     }
 }
