@@ -19,6 +19,10 @@
     </div>
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Button" />
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
+
     </form>
 </body>
 </html>

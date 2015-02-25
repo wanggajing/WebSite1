@@ -7,6 +7,11 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
+    //服务器每次接到请求，就会调用 IHttpHandler handler = new _Default();
+    //handler.ProceeRequest();
+    //然后这个对象就被GC回收
+    //所以下次再访问时,又会创建一个新对象，所以field的值又是0；
+    private int i = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -33,5 +38,10 @@ public partial class _Default : System.Web.UI.Page
         Response.Write("Value of Label2 is:" + Label2.Text);
         Label2.Text = "100";
         Response.Write("Value of Lable2 after assignment is:" + Label2.Text);
+    }
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        i++;
+        Label3.Text = i.ToString();
     }
 }
