@@ -17,9 +17,9 @@ public class YZM : IHttpHandler,System.Web.SessionState.IRequiresSessionState {
                 bitmap.Save(context.Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
               */
                 Random ran = new Random();
-                int code = ran.Next();
+                int code = ran.Next(1000,9999);
                 string strCode = code.ToString();
-                g.DrawString(strCode, new System.Drawing.Font("宋体", 12),
+                g.DrawString(strCode, new System.Drawing.Font("宋体", 20),
                     System.Drawing.Brushes.Red, new System.Drawing.PointF(0, 0));
                 bitmap.Save(context.Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                 
