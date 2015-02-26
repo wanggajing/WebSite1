@@ -21,6 +21,11 @@ public partial class _Default : System.Web.UI.Page
             Label1.Text = "0";
             Label2.Text = "0";
         }
+        if (Request.Cookies["MySessionId"]==null)
+        {
+            string sessionId = Guid.NewGuid().ToString();
+            Response.SetCookie(new HttpCookie("MySessionId", sessionId));
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -47,5 +52,17 @@ public partial class _Default : System.Web.UI.Page
         //Label3.Text = i.ToString();
         j++;
         Label3.Text = j.ToString();
+    }
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        string sessionId = Request.Cookies["MySessionId"].Value;
+        IDictionary<string, object> mySession = SessionManager.GetSession(sessionId);
+        mySession["mySession"] = "33333";
+    }
+    protected void Button6_Click(object sender, EventArgs e)
+    {
+        string sessionId = Request.Cookies["MySessionId"].Value;
+        IDictionary<string, object> mySession = SessionManager.GetSession(sessionId);
+        Button5.Text = mySession["mySession"].ToString();
     }
 }

@@ -23,6 +23,10 @@
         <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
 
+        <br />
+        <asp:Button ID="Button5" runat="server" OnClick="Button6_Click" Text="GetSession" />
+        <asp:Button ID="Button6" runat="server" OnClick="Button5_Click" Text="SetSession" />
+
     </form>
 </body>
 </html>
