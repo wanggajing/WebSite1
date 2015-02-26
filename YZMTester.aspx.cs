@@ -11,4 +11,15 @@ public partial class YZMTester : System.Web.UI.Page
     {
 
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if (TextBox1.Text.Equals(Session["YZM"]))
+        {
+            Response.Write("success");
+        }
+        else
+        {
+            Response.Write("fail");
+        }
+    }
 }

@@ -3,7 +3,7 @@
 using System;
 using System.Web;
 
-public class YZM : IHttpHandler {
+public class YZM : IHttpHandler,System.Web.SessionState.IRequiresSessionState {
 
     public void ProcessRequest(HttpContext context)
     {
@@ -19,9 +19,12 @@ public class YZM : IHttpHandler {
                 Random ran = new Random();
                 int code = ran.Next();
                 string strCode = code.ToString();
-                g.DrawString(strCode, new System.Drawing.Font("宋体", 20),
+                g.DrawString(strCode, new System.Drawing.Font("宋体", 12),
                     System.Drawing.Brushes.Red, new System.Drawing.PointF(0, 0));
                 bitmap.Save(context.Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                
+                //save in session
+                HttpContext.Current.Session["YZM"] = strCode;
             }
         }
     }
