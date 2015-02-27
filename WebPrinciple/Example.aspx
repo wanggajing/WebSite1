@@ -17,6 +17,11 @@
         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="AlertFromMessageBox" />
         <br />
         <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Place a File" />
+        <br />
+        <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Hide" />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <input type="button" value="Hide from client side" 
+            onclick="document.getElementById('TextBox1').style.display='none'"/>
     </div>
     </form>
 </body>

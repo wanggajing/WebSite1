@@ -29,4 +29,8 @@ public partial class WebPrinciple_Example : System.Web.UI.Page
     {
         File.WriteAllText("c:/newFile.txt", "hahahahhahahaha");
     }
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        TextBox1.Visible = false;
+    }
 }
