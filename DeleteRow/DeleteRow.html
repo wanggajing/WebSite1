@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form id="form1" action="DeleteRow.ashx" method="get">
+        <input type="hidden" name="Name" id="Name" />
+        <table>
+            <tr><td>Name</td><td>Age</td><td>Operation</td></tr>
+            <tr><td>WuKe</td><td>20</td><td><a href="DeleteRow.ashx?Name=WuKe">Delete</a><input type="button" value="Delete" 
+                onclick="document.getElementById('Name').value = 'WuKe';document.getElementById('form1').submit();"/></td></tr>
+            <tr><td>WangGa</td><td>22</td><td><a href="DeleteRow.ashx?Name=WangGa">Delete</a></td></tr>
+        </table>
+    </form>   
+</body>
+</html>
