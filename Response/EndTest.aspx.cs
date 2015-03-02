@@ -20,7 +20,8 @@ public partial class Response_EndTest : System.Web.UI.Page
         }
         else if (q == "3")
         {
-            Server.Transfer("Handler.ashx");
+            Server.Transfer("Hello.aspx");
+            Server.Transfer("www.baidu.com");//不能访问
         }
         else if (string.IsNullOrEmpty(q))
         {
@@ -28,7 +29,8 @@ public partial class Response_EndTest : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("Handler.ashx");
+            Response.Redirect("Hello.aspx");
+            Response.Redirect("www.baidu.com");//可以访问
         }
     }
 }
