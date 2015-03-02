@@ -18,6 +18,10 @@ public partial class Response_EndTest : System.Web.UI.Page
         {
             Response.End();
         }
+        else if (q == "3")
+        {
+            Server.Transfer("Handler.ashx");
+        }
         else if (string.IsNullOrEmpty(q))
         {
             Response.Write("please enter your question");
